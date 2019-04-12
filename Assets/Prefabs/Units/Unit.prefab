@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+  hpMax: 10
   force: 1
   speed: 2
   acumulateSpeed: 0

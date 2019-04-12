@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
 			changeTurn();
 
 		}
+		
 	}
 
 	public GameObject getCurrentUnit()

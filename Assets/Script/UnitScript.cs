@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitScript : MonoBehaviour
 {
 	public int hp = 0;
+	public int hpMax = 0;
 	public int force = 0;
 	public int speed = 0;
 	public int acumulateSpeed;
 	private int damage;
+	public Slider hpBar;
 
 	public List<GameObject> skills;
 
@@ -17,6 +20,8 @@ public class UnitScript : MonoBehaviour
 	void Start()
 	{
 		acumulateSpeed= speed;
+
+		hpBar.maxValue = hpMax;
 	}
 
 	// Update is called once per frame
@@ -28,6 +33,7 @@ public class UnitScript : MonoBehaviour
 			GameObject.Find("GameManager").GetComponent<GameManager>().allUnits.Remove(this.gameObject);
 			Destroy(this.gameObject);
 		}
+		hpBar.value = hp;
 	}
 
 	public void upAS()
