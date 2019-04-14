@@ -12,6 +12,7 @@ public class UnitScript : MonoBehaviour
 	public int acumulateSpeed;
 	private int damage;
 	public Slider hpBar;
+	public GameObject pos;
 
 	public List<GameObject> skills;
 
@@ -21,7 +22,6 @@ public class UnitScript : MonoBehaviour
 	{
 		acumulateSpeed= speed;
 
-		hpBar.maxValue = hpMax;
 	}
 
 	// Update is called once per frame
@@ -34,6 +34,14 @@ public class UnitScript : MonoBehaviour
 			Destroy(this.gameObject);
 		}
 		hpBar.value = hp;
+	}
+
+	public void settupBars(Slider oneHpBar)
+	{
+		hpBar = oneHpBar;
+		hpBar.maxValue = hpMax;
+		hpBar.value = hp;
+
 	}
 
 	public void upAS()
@@ -49,10 +57,7 @@ public class UnitScript : MonoBehaviour
 
 	public void useSkill(int skillNo, GameObject target)
 	{
-		Debug.Log("unit use skill " + skillNo);
 		GameObject usedSkill = Instantiate(skills[skillNo], this.gameObject.transform.Find("spellLauncher").transform);
-
-
 		usedSkill.GetComponent<SkillScript>().useSkillOn(target);
 
 	}

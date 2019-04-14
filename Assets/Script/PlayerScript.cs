@@ -96,8 +96,10 @@ public class PlayerScript : MonoBehaviour
 		int j = 0;
 		foreach (GameObject unit in unitsPref)
 		{
-			GameObject uC = Instantiate<GameObject>(unit, gm.transform.Find("Ground/board_1").GetChild(j).transform);
+			GameObject pos = gm.transform.Find("Ground/board_1").GetChild(j).gameObject;
+			GameObject uC = Instantiate<GameObject>(unit, pos.transform);
 			uC.transform.parent = gameObject.transform;
+			uC.GetComponent<UnitScript>().pos = pos;
 			this.units.Add(uC);
 			j++;
 		}
@@ -132,8 +134,6 @@ public class PlayerScript : MonoBehaviour
 		this.selectMode = true;
 		this.btnNo = btnNo;
 		this.currentUnit = currentUnit;
-
-		Debug.Log(btnNo + " clicked");
 	}
 
 	public void unsetButtons()

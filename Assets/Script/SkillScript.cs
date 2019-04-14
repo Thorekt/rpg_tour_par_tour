@@ -22,10 +22,6 @@ public class SkillScript : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		Debug.Log("fire");
-		
-
-
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 	}

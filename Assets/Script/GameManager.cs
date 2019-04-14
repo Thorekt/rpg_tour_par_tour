@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
 	private GameObject currentPlayer;
 	private int currentTurn;
 	private string currentPhase;
+
+
+
+	[SerializeField] private Material defaultMaterial;
+	[SerializeField] private Material highlightMaterial;
 
 	void Start()
 	{
@@ -42,15 +48,13 @@ public class GameManager : MonoBehaviour
 			setAllUnits();
 		}
 
-		Debug.Log("turn : "+currentTurn );
-		Debug.Log( currentPhase);
 
 		switch (currentPhase)
 		{
 			case "start":
 				{
 					currentUnit = getCurrentUnit();
-					Debug.Log(currentUnit.name);
+					currentUnit.GetComponent<UnitScript>().pos.GetComponent<MeshRenderer>().material = highlightMaterial;
 					setCurrentPlayer();
 					if (currentPlayer != null)
 					{
@@ -69,7 +73,7 @@ public class GameManager : MonoBehaviour
 			case "end":
 				{
 					playerScript.unsetButtons();
-
+					currentUnit.GetComponent<UnitScript>().pos.GetComponent<MeshRenderer>().material = defaultMaterial;
 					currentUnit.GetComponent<UnitScript>().resetAS();
 
 					foreach (GameObject u in allUnits)
@@ -83,6 +87,8 @@ public class GameManager : MonoBehaviour
 				}
 
 		}
+
+
 
 	}
 
@@ -118,21 +124,28 @@ public class GameManager : MonoBehaviour
 
 	public void setAllUnits()
 	{
+		int j = 0;
 		foreach (GameObject u in this.playerScript.units)
 		{
+			Slider hpBar = gameObject.transform.Find("HUD/Unit_stat/unit_panel_1").GetChild(j).gameObject.GetComponent<Slider>();
+			u.GetComponent<UnitScript>().settupBars(hpBar);
 			allUnits.Add(u);
+			j++;
+
 		}
+		j = 0;
 		foreach (GameObject u in this.aiScript.units)
 		{
+			Slider hpBar = gameObject.transform.Find("HUD/Unit_stat/unit_panel_2").GetChild(j).gameObject.GetComponent<Slider>();
+			u.GetComponent<UnitScript>().settupBars(hpBar);
 			allUnits.Add(u);
+			j++;
 		}
 		if (this.playerScript.units != null && this.aiScript.units != null)
 		{
-
 			changeTurn();
-
 		}
-		
+
 	}
 
 	public GameObject getCurrentUnit()
