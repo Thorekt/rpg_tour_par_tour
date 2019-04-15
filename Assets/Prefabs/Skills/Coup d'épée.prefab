@@ -9,7 +9,32 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1587158700074448, guid: 0c5f0160124fd84459604af67b46b2cd, type: 3}
       propertyPath: m_Name
-      value: SkillPrefab
+      value: "Coup d'\xE9p\xE9e"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951884477110276, guid: 0c5f0160124fd84459604af67b46b2cd,
+        type: 3}
+      propertyPath: style
+      value: cac
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951884477110276, guid: 0c5f0160124fd84459604af67b46b2cd,
+        type: 3}
+      propertyPath: type
+      value: unknow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951884477110276, guid: 0c5f0160124fd84459604af67b46b2cd,
+        type: 3}
+      propertyPath: vSkill
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951884477110276, guid: 0c5f0160124fd84459604af67b46b2cd,
+        type: 3}
+      propertyPath: effect
+      value: unknow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951884477110276, guid: 0c5f0160124fd84459604af67b46b2cd,
+        type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4881915254450828, guid: 0c5f0160124fd84459604af67b46b2cd, type: 3}
       propertyPath: m_LocalPosition.x

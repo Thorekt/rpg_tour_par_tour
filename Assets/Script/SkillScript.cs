@@ -14,7 +14,7 @@ public class SkillScript : MonoBehaviour
 
 	private Transform targetTransform;
 
-	UnitScript targetScript;
+	private UnitScript targetScript;
 
 	private GameManager gm;
 
@@ -40,7 +40,7 @@ public class SkillScript : MonoBehaviour
 				transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
 				return;
 			case "cac":
-				this.transform.parent.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
+				this.transform.parent.position = targetScript.pos.transform.Find("interactPos").transform.position;
 				return;
 			case ("cast"):
 				transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
