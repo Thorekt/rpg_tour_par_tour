@@ -5,9 +5,10 @@ using UnityEngine;
 public class AIScript : MonoBehaviour
 {
 	private GameManager gm;
-	[SerializeField]
-	private GameObject unit;
+
 	public List<GameObject> units;
+	[SerializeField]
+	private List<GameObject> unitsPref;
 	public bool turn;
 
 
@@ -31,11 +32,15 @@ public class AIScript : MonoBehaviour
 	void createUnits()
 	{
 		units = new List<GameObject>();
-		for (int j = 0 ; j < 5 ; j++)
+		int j = 0;
+		foreach (GameObject unit in unitsPref)
 		{
-			GameObject uC = Instantiate<GameObject>(unit, gm.transform.Find("Ground/board_2").GetChild(j).transform);
+			GameObject pos = gm.transform.Find("Ground/board_2").GetChild(j).gameObject;
+			GameObject uC = Instantiate<GameObject>(unit, pos.transform);
 			uC.transform.parent = gameObject.transform;
+			uC.GetComponent<UnitScript>().pos = pos;
 			this.units.Add(uC);
+			j++;
 		}
 	}
 

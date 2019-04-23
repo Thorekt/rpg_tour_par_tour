@@ -9,7 +9,6 @@ public class PlayerScript : MonoBehaviour
 
 	private GameManager gm;
 
-	
 	public List<GameObject> units;
 	[SerializeField]
 	private List<GameObject> unitsPref;
@@ -58,7 +57,7 @@ public class PlayerScript : MonoBehaviour
 
 		if (selectMode == true)
 		{
-			
+
 
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;

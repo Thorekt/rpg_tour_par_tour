@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class UnitScript : MonoBehaviour
 {
-	public int hp = 0;
-	public int hpMax = 0;
-	public int force = 0;
-	public int speed = 0;
-	public int acumulateSpeed;
+	public int hp ;
+	public int hpMax ;
+	public int force ;
+	public int speed ;
+	public int acumulateSpeed = 0;
 	private int damage;
 	public Slider hpBar;
 	public GameObject pos;
@@ -20,7 +20,7 @@ public class UnitScript : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		acumulateSpeed= speed;
+	
 
 	}
 
@@ -34,6 +34,7 @@ public class UnitScript : MonoBehaviour
 			Destroy(this.gameObject);
 		}
 		hpBar.value = hp;
+		Debug.Log(acumulateSpeed);
 	}
 
 	public void settupBars(Slider oneHpBar)

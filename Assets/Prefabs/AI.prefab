@@ -1,21 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1459444484120084}
-  m_IsPrefabAsset: 1
 --- !u!1 &1459444484120084
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4100362832069820}
@@ -29,9 +19,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4100362832069820
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459444484120084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -42,13 +33,21 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114195529196589890
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459444484120084}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87ed9be8f94e7734c8591a12bf667699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 1460451510561878, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 2}
+  units: []
+  unitsPref:
+  - {fileID: 7236311971061997117, guid: 2a18fd73044f66d4ca671cd86c69a708, type: 3}
+  - {fileID: 7236311971061997117, guid: 2a18fd73044f66d4ca671cd86c69a708, type: 3}
+  - {fileID: 7236311971061997117, guid: 2a18fd73044f66d4ca671cd86c69a708, type: 3}
+  - {fileID: 7236311971061997117, guid: 2a18fd73044f66d4ca671cd86c69a708, type: 3}
+  - {fileID: 7236311971061997117, guid: 2a18fd73044f66d4ca671cd86c69a708, type: 3}
+  turn: 0

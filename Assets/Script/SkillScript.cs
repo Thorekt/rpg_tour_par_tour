@@ -40,7 +40,8 @@ public class SkillScript : MonoBehaviour
 				transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
 				return;
 			case "cac":
-				this.transform.parent.position = targetScript.pos.transform.Find("interactPos").transform.position;
+				GameObject interactPos = targetScript.pos.transform.Find("interactPos").gameObject;
+				this.transform.parent.position = interactPos.transform.position;
 				return;
 			case ("cast"):
 				transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
@@ -76,9 +77,7 @@ public class SkillScript : MonoBehaviour
 				targetScript.getDamage(vSkill);
 				return;
 			case "cast":
-
 				targetScript.getDamage(vSkill);
-
 				return;
 		}
 	}

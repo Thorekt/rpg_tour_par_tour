@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 		currentTurn = 0;
 		currentPhase = "start";
 		currentPlayer = null;
+		currentUnit = null;
 	}
 
 	// Update is called once per frame
@@ -48,19 +49,26 @@ public class GameManager : MonoBehaviour
 			setAllUnits();
 		}
 
-
+		Debug.Log(currentPhase);
 		switch (currentPhase)
 		{
 			case "start":
 				{
-					currentUnit = getCurrentUnit();
-					currentUnit.GetComponent<UnitScript>().pos.GetComponent<MeshRenderer>().material = highlightMaterial;
+					upAllAS();
+					
+					if (currentUnit == null)
+					{
+						currentUnit = getCurrentUnit();
+						currentUnit.GetComponent<UnitScript>().pos.GetComponent<MeshRenderer>().material = highlightMaterial;
+						
+					}
 					setCurrentPlayer();
 					if (currentPlayer != null)
 					{
 						changePhase();
 					}
 					return;
+					
 				}
 
 			case "mid":
@@ -75,12 +83,9 @@ public class GameManager : MonoBehaviour
 					playerScript.unsetButtons();
 					currentUnit.GetComponent<UnitScript>().pos.GetComponent<MeshRenderer>().material = defaultMaterial;
 					currentUnit.GetComponent<UnitScript>().resetAS();
+					currentUnit = null;
 
-					foreach (GameObject u in allUnits)
-					{
-
-						u.GetComponent<UnitScript>().upAS();
-					}
+					
 
 					changePhase();
 					return;
@@ -150,18 +155,22 @@ public class GameManager : MonoBehaviour
 
 	public GameObject getCurrentUnit()
 	{
-		int hightestSpeed = -1;
-		GameObject unitTurn = null;
+		
+		GameObject unitTurn = allUnits[0];
 		foreach (GameObject u in allUnits)
 		{
-			if (u != null)
-			{
-				if (hightestSpeed < u.GetComponent<UnitScript>().acumulateSpeed)
-				{
-					unitTurn = u;
-					hightestSpeed = u.GetComponent<UnitScript>().acumulateSpeed;
+			Debug.Log("u"+u.gameObject.name + " : " + u.GetComponent<UnitScript>().acumulateSpeed);
+			Debug.Log("unitTurn"+unitTurn.gameObject.name + " : " + unitTurn.GetComponent<UnitScript>().acumulateSpeed);
 
-				}
+			if (unitTurn==null)
+			{
+				
+				unitTurn = u;
+			}
+			else if ( unitTurn.GetComponent<UnitScript>().acumulateSpeed < u.GetComponent<UnitScript>().acumulateSpeed)
+			{
+				unitTurn = null;
+				unitTurn = u;
 			}
 		}
 		return unitTurn;
@@ -199,5 +208,14 @@ public class GameManager : MonoBehaviour
 	public void changeTurn()
 	{
 		this.currentTurn++;
+	}
+
+	private void upAllAS()
+	{
+		foreach (GameObject u in allUnits)
+		{
+
+			u.GetComponent<UnitScript>().upAS();
+		}
 	}
 }
