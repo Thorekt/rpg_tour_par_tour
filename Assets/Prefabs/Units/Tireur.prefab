@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7235520023441257067
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1460451510561878, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_Name
+      value: Tireur
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: hp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: force
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: hpMax
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.data[0]
+      value: 
+      objectReference: {fileID: 424831028217461701, guid: 5104dbaafc8fd8542b1fc043a071b3b4,
+        type: 3}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: mana
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: manaMax
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: puissance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.data[1]
+      value: 
+      objectReference: {fileID: 6014243785500357867, guid: ece88f79f2d3bb54b81e36e6db453430,
+        type: 3}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startPuissance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: regenMana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startRegenMana
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23934664776351580, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6ab761b3307cb242a8554030042cc2a, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}

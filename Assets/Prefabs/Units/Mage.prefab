@@ -58,12 +58,12 @@ PrefabInstance:
     - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}
       propertyPath: skills.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}
       propertyPath: hp
-      value: 30
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}
@@ -73,18 +73,59 @@ PrefabInstance:
     - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}
       propertyPath: speed
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}
       propertyPath: skills.Array.data[0]
       value: 
-      objectReference: {fileID: 5841661822462681680, guid: f71e807162f9e454c8f9fbe7914752cc,
+      objectReference: {fileID: 424831028217461701, guid: 5104dbaafc8fd8542b1fc043a071b3b4,
         type: 3}
     - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}
       propertyPath: hpMax
-      value: 30
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: mana
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: manaMax
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: puissance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.data[1]
+      value: 
+      objectReference: {fileID: 5841661822462681680, guid: f71e807162f9e454c8f9fbe7914752cc,
+        type: 3}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startPuissance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: regenMana
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startRegenMana
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 23934664776351580, guid: f7edd8eddf3778247abe54cd842d6d5f,
         type: 3}

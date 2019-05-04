@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &171586633240622289
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1460451510561878, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_Name
+      value: Soigneur
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101975721340216, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: hp
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: hpMax
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: mana
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: manaMax
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: puissance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.data[0]
+      value: 
+      objectReference: {fileID: 424831028217461701, guid: 5104dbaafc8fd8542b1fc043a071b3b4,
+        type: 3}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.data[1]
+      value: 
+      objectReference: {fileID: 3634913203276129547, guid: 51047452a8591f34aae1fb225bb49e36,
+        type: 3}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: skills.Array.data[2]
+      value: 
+      objectReference: {fileID: 2189292362854917536, guid: d45b1c922bb44e448b6d8bfa61f5d464,
+        type: 3}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startPuissance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: regenMana
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startRegenMana
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114200346425186908, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: startSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926549799323724, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926549799323724, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224940635181876367, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 23934664776351580, guid: f7edd8eddf3778247abe54cd842d6d5f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7edf7655974681741a523374ee84fb46, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7edd8eddf3778247abe54cd842d6d5f, type: 3}

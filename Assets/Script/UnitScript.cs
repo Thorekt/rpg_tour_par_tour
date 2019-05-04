@@ -5,65 +5,114 @@ using UnityEngine.UI;
 
 public class UnitScript : MonoBehaviour
 {
-	public int hp;
-	public int hpMax;
-	public int force;
-	public int speed;
-	public int acumulateSpeed = 0;
-	private int damage;
-	public Slider hpBar;
-	public GameObject pos;
+	[Header("Stats")]
+	private float hp;
+	[SerializeField] private float hpMax;
+	private float mana;
+	[SerializeField] private float manaMax;
+	private float puissance;
+	[SerializeField] private float startPuissance;
+	private float regenMana;
+	[SerializeField] private float startRegenMana;
+	private float speed;
+	[SerializeField] private float startSpeed;
+	private float acumulateSpeed = 0;
+	[SerializeField] private List<GameObject> skills;
 
-	public List<GameObject> skills;
+	[Header("Utilitaire")]
+	[SerializeField] private Image hpBar;
+	[SerializeField] private Image manaBar;
+	private GameObject pos;
+	private List<GameObject> effects = new List<GameObject>();
 
+	public GameObject Pos { get => pos; set => pos = value; }
+	public float Hp { get => hp; set => hp = value; }
+	public float Mana { get => mana; set => mana = value; }
+	public float Puissance { get => puissance; set => puissance = value; }
+	public float RegenMana { get => regenMana; set => regenMana = value; }
+	public float Speed { get => speed; set => speed = value; }
+	public float AcumulateSpeed { get => acumulateSpeed; set => acumulateSpeed = value; }
+	public List<GameObject> Skills { get => skills; set => skills = value; }
 
 	// Use this for initialization
 	void Start()
 	{
 
+		hp = hpMax;
+		mana = manaMax;
+		puissance = startPuissance;
+		regenMana = startRegenMana;
+	}
 
+	private void Awake()
+	{
+		speed = startSpeed;
 	}
 
 	// Update is called once per frame
+
 	void Update()
 	{
-		if (hp <= 0)
+
+		if (Hp <= 0)
 		{
-			GameObject.Find("GameManager").GetComponent<GameManager>().allUnits.Remove(this.gameObject);
+			GameObject.Find("GameManager").GetComponent<GameManager>().AllUnits.Remove(this.gameObject);
+			transform.parent.GetComponent<PlayerScript>().Units.Remove(this.gameObject);
 			Destroy(this.gameObject);
 		}
-		hpBar.value = hp;
+		if ( Hp > hpMax)
+		{
+			Hp = hpMax;
+		}
+		if ( Mana > manaMax)
+		{
+			Mana = manaMax;
+		}
+		hpBar.fillAmount = Hp / hpMax;
+		manaBar.fillAmount = Mana / manaMax;
 	}
 
-	public void settupBars(Slider oneHpBar)
+	public void startTurn()
 	{
-		hpBar = oneHpBar;
-		hpBar.maxValue = hpMax;
-		hpBar.value = hp;
-
+		Mana += RegenMana;
+		foreach (GameObject e in effects)
+		{
+			e.GetComponent<EffectScript>().effectApply(gameObject);
+		}
 	}
+
+	public void addEffect(GameObject effect)
+	{
+		GameObject e = Instantiate<GameObject>(effect, gameObject.transform.Find("Capsule"));
+		effects.Add(e);
+	}
+
+	public void removeEffect(GameObject effect)
+	{
+		effects.Remove(effect);
+		Destroy(effect);
+	}
+
 
 	public void upAS()
 	{
-		acumulateSpeed += speed;
+		AcumulateSpeed += Speed;
 	}
 
 	public void resetAS()
 	{
-		acumulateSpeed = 0;
+		AcumulateSpeed = 0;
 	}
 
 
 	public void useSkill(int skillNo, GameObject target)
 	{
-		GameObject usedSkill = Instantiate(skills[skillNo], this.gameObject.transform.Find("spellLauncher").transform);
+		Debug.Log(skillNo);
+		GameObject usedSkill = Instantiate(Skills[skillNo], this.gameObject.transform.Find("spellLauncher").transform);
 		usedSkill.GetComponent<SkillScript>().useSkillOn(target);
-
+		Mana -= usedSkill.GetComponent<SkillScript>().cost();
+		usedSkill.GetComponent<SkillScript>().UnitPuissance = Puissance;
 	}
 
-	public void getDamage(int damage)
-	{
-		this.hp -= damage;
-		return;
-	}
+
 }

@@ -6,15 +6,18 @@ public class SkillScript : MonoBehaviour
 {
 
 	[SerializeField] private string style;
-	[SerializeField] private string type;
-	[SerializeField] private int vSkill;
-	[SerializeField] private string effect;
-	[SerializeField] private int vEffect;
-	[SerializeField] private float speed;
 
-	private bool hit = false;
+	[SerializeField] private float vSkill;
 
-	private Transform startPos;
+	[SerializeField] private GameObject effect;
+
+
+
+	[SerializeField] private float manaCost;
+
+	private float speed;
+
+	[HideInInspector] private float unitPuissance;
 
 	private Transform targetTransform;
 
@@ -24,16 +27,20 @@ public class SkillScript : MonoBehaviour
 
 	private Transform dest;
 
+	public float UnitPuissance { get => unitPuissance; set => unitPuissance = value; }
+
+
+
 	// Use this for initialization
 	void Start()
 	{
 		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-		startPos = this.transform.parent.parent;
-		dest = startPos;
+
 	}
 
 	private void Awake()
 	{
+		speed = 10;
 		speed *= Time.deltaTime;
 
 	}
@@ -41,91 +48,47 @@ public class SkillScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Debug.Log(hit);
-		switch (this.style)
-		{
-			case "heal":
-				transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
-
-				return;
-			case "cac":
-
-
-				if (hit == false)
-				{
-
-					GameObject interactPos = targetScript.pos.transform.Find("interactPos").gameObject;
-					dest = interactPos.transform;
-				}
-				else if (hit == true)
-				{
-					dest = startPos.transform;
-				}
-
-
-				if (this.transform.parent.parent.position != dest.position)
-				{
-					this.transform.parent.parent.position = Vector3.MoveTowards(this.transform.parent.parent.position, dest.position, speed);
-				}
-				else if (this.transform.parent.parent.position == dest.position)
-				{
-					transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
-				}
-				/*else if (this.transform.parent.parent.position != startPos.position && hit)
-				{
-					this.transform.parent.parent.position = Vector3.MoveTowards(this.transform.parent.parent.position, startPos.position, speed);
-				}
-				else if (this.transform.parent.parent.position == startPos.position && hit)
-				{
-					end();
-				}*/
-
-				return;
-			case ( "cast" ):
-				transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
-				if (hit)
-				{
-					end();
-				}
-
-
-				return;
-		}
-
-
-
+		transform.LookAt(targetTransform);
+		transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed);
 	}
 
 	void OnTriggerEnter(Collider c)
 	{
-		if (c.gameObject == targetTransform.gameObject)
+		if (c.transform.parent.gameObject == targetTransform.gameObject)
 		{
-			hit = true;
 			skillApply();
+			gm.changePhase();
+			Destroy(this.gameObject);
 		}
+
 	}
 
-	void end()
+	public float cost()
 	{
-		gm.changePhase();
-
-		Destroy(this.gameObject);
+		return manaCost;
 	}
 
 	void skillApply()
 	{
-		switch (this.style)
-		{
-			case "heal":
-				targetScript.hp += vSkill;
-				return;
-			case "cac":
+		vSkill *= UnitPuissance;
 
-				targetScript.getDamage(vSkill);
-				return;
-			case "cast":
-				targetScript.getDamage(vSkill);
-				return;
+
+		if (style == "soin")
+		{
+			targetScript.Hp += vSkill;
+		}
+		else if (style == "damage")
+		{
+			targetScript.Hp -= vSkill;
+		}
+		else if (style == "mana")
+		{
+			targetScript.Mana += vSkill;
+		}
+
+		if (effect != null)
+		{
+			targetScript.addEffect(effect);
 		}
 	}
 
